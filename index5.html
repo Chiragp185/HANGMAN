@@ -15,9 +15,13 @@
                     font-family: hans;
                     src: url("Hansief.otf");
                 }
+                @font-face{
+                    font-family: see;
+                    src: url("regularlight.otf");
+                }
                 header{
                     width: 100%;
-                    height: 5em;
+                    height: 4em;
                     box-shadow: 0px 2px 2px black;
                 }
                 nav a{
@@ -30,28 +34,126 @@
                 nav li{
                     list-style: none;
                     display: inline-block;
-                    height: 5em;
-                    width: 6em;
+                    height: 4em;
+                    width: 7em;
                     text-align: center;
-                    margin-left: 1.5em;
-                    border: 2px solid black;
                     font-family: hans;
                     color: rgb(1,12,255);
-                    padding-top: 2em;
+                    padding-top: 1.2em;
+                }
+                nav li:last-child{
+                    background-color: rgb(1,12,255);
+                    border-bottom-left-radius: 1em;
+                    color: white;
+                }
+                nav li:hover{
+                    color: orange;
+                    cursor: pointer;
+                }
+                #container{
+                    position: absolute;
+                    top: 0%;
+                    left:0%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.6);
+                    display: none;
+                }
+                #register{
+                    font-family: see;
+                    font-size: medium;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 1em;
+                    display: none;
+                    margin: 0 auto;
+                    margin-top: 7em;
+                    height: 27.5em;
+                    width: 22em;
+                    border-radius: 1em;
+                    border: 5px solid rgb(0,0,0,0.3);
+                    background-color: white;
+                }
+                #register input{
+                    padding: 1em;
+                    width: 90%;
+                    margin-bottom: 0.8em;
+                }
+                #register form{
+                    text-align: left;
+                    margin-top: 0.5em;
+                }
+                #register button{
+                    font-family: hans;
+                    width: 70%;
+                    background: green;
+                    color: white;
+                    padding: 1em;
+                    border-radius: 0.5em;
+                    border: none;
+                    margin-right: 2em;
+                    margin-bottom: 0.5em;
+                }
+                #register button:hover{
+                    width: 50%;
+                    transition-duration: 0.4s;
+                    }
+                .small{
+                    font-size: small;
+                }
+                .small a{
+                    color:blue;
+                }
+                .exit{
+                    position: relative;
+                    top: -10px;
+                    left: 95px;
+                    height: 15px;
+                    width: 15px;
                 }
             </style>
+            <script type="text/javascript">
+                function signup()
+                {
+                    document.getElementById("container").style.display="block";
+                    document.getElementById("register").style.display="block";
+                }
+                function login()
+                {
+                    document.getElementById("container").style.display="block";
+                }
+            </script>
         </head>
         <body>
             <header>
-                <img src="Transparentlogo.png" alt="Logo" height="100%" width="230"/>
+                <img src="Transparentlogo.png" alt="Logo" height="100%" width="225"/>
                 <nav>
                     <ul>
                         <li><a href="">HOW TO PLAY</a></li>
-                        <li>SETTINGS</li>
-                        <li>SIGN-UP</li>
-                        <li>LOGIN</li>
+                        <li><a href="">SETTINGS</a></li>
+                        <li onclick="signup();">SIGN-UP</li>
+                        <li onclick="login();">LOGIN</li>
                     </ul>
                 </nav>
             </header>
+            <div id="container">
+                <div id="register">
+                    Sign Up, It's Free!
+                    <a href="index5.html"><img src="exit.png" class="exit"/></a>
+                    <form>
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Enter Name"/>
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username" placeholder="Enter Username"/>
+                        <label for="pswd">Password:</label><br>
+                        <input type="password" id="pswd" name="pswd" placeholder="Enter Password"/>
+                        <label for="cpswd">Confirm Password:</label><br>
+                        <input type="password" id="cpswd" name="cpswd" placeholder="Confirm Password"/>
+                    </form>
+                    <button>CREATE MY ACCOUNT</button><br>
+                     <span class="small">By clicking, you agree to our <a href="">Terms and Conditions</a>
+                     Already have an account? <a href="">Login</a></span>
+                </div>
+            </div>
         </body>
     </html>
